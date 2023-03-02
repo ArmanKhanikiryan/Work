@@ -63,7 +63,17 @@ function Navbar() {
                 <div className='change_language'>
                     <div className='contact'>
                         <div className='contact_container'>
-                            <span className='dropdown_span_contact'>Contact to Us</span>
+
+                            <span className='dropdown_span_contact'>Contact Info</span>
+
+
+                            <span>info.proffsystem@gmail.com</span>
+                            <div className='phone_div'>
+                                <span className='phone_number'>+37491374520</span>
+                                <span className='phone_number'>+37495778844</span>
+                            </div>
+
+
                             <PhoneInTalkIcon style={{fontSize: '30px'}} className='phone'/>
                         </div>
                         <LanguageSelector/>

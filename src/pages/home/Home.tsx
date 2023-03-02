@@ -9,6 +9,7 @@ import testPicture6 from '../../assets/images/facade6.avif'
 import door from  '../../assets/icons/door.png'
 import window from  '../../assets/icons/window.png'
 import balcony from '../../assets/icons/balcony.png'
+import slide from '../../assets/icons/sliding-door.png'
 
 
 const images: string[] = [
@@ -39,11 +40,14 @@ function Home() {
                             <img className='header_icons' src={balcony} alt="window"/>
                             <span>Balcony</span>
                         </div>
-
+                        <div className='icons_wrapper'>
+                            <img className='header_icons' src={slide} alt="slide"/>
+                            <span>Slide</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            {/*<ImageSlider images={images} />*/}
+            <ImageSlider images={images} />
 
 
             <div className='test_div'>

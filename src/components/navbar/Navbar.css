@@ -34,20 +34,30 @@ body{
 .contact_container{
     display: flex;
     align-items: center;
+    gap: 20px;
+    margin-top: 5px;
 }
 .contact_container > span{
-    margin: 10px 10px 0 0;
     font-weight: 600;
+}
+.dropdown_span_contact{
+    margin-top: 5px;
 }
 
 .phone{
     cursor: pointer;
-    margin-top: 13px;
+    margin-top: 10px;
+}
+.phone_number{
+    font-weight: 600;
 }
 .phone:hover{
     color: rgba(128,128,128, 0.6);
 }
-
+.phone_div{
+    display: flex;
+    flex-direction: column;
+}
 
 /*  dropdown hover*/
 
@@ -175,7 +185,10 @@ body{
 .menu_icon{
     width: 39px;
     margin-top: 7px;
+    margin-left: 20px;
 }
+
+
 
 
 
@@ -183,7 +196,7 @@ body{
 
 /*MEDIA*/
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 610px) {
     .menu_dropdown > span{
         display: none;
     }
@@ -194,12 +207,12 @@ body{
         display: none;
     }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1800px) {
     .ul_container{
         justify-content: flex-start;
     }
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1300px) {
     .ul_container{
         display: none;
     }
@@ -209,17 +222,31 @@ body{
         margin-left: 40px;
     }
 }
-@media screen and (max-width: 395px) {
-    .change_language {
+@media screen and (max-width: 950px) {
+    .contact_container > span{
+        display: none;
+    }
+}
+@media screen and (max-width: 535px) {
+    .contact_container{
         display: none;
     }
 }
 
-@media screen and (max-width: 225px) {
+@media screen and (max-width: 350px) {
+    .contact{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 250px) {
     .logo{
         display: none;
     }
     .menu_icon{
-        width: 80px;
+        width: 60px;
+    }
+    .company_name{
+        display: block;
     }
 }
