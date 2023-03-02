@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css'
 import logo from '../../assets/images/logo.png'
+import menu from '../../assets/icons/menu.png'
 import {useNavigate} from "react-router";
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import LanguageSelector from "../languageSelector";
@@ -11,11 +12,10 @@ function Navbar() {
     return (
         <div className='navbar_wrapper'>
 
-
             <div className='navbar'>
-                <img className='logo' onClick={() => navigate('/')} src={logo} alt=""/>
+                <img className='logo' onClick={() => navigate('/')} src={logo} alt="logo"/>
                 <div className='nav_container'>
-                    <ul className='ul_container'>
+                    <div className='ul_container'>
                         <div className='home_btn'>
                             <span className='dropdown_span' onClick={() => navigate('/')}>Home</span>
                         </div>
@@ -47,12 +47,20 @@ function Navbar() {
                                 </div>
                             </div>
                         </div>
-                    </ul>
+                        <div className='home_btn'>
+                            <span className='dropdown_span' onClick={() => navigate('/about-us')}>About Us</span>
+                        </div>
+                    </div>
+                    <div className='menu_dropdown'>
+                        <span>Menu</span>
+                        <img className='menu_icon' src={menu} alt="menu"/>
+                    </div>
+
                 </div>
             </div>
-            <div className='change_language'>
-                <div>
 
+            <div className='change_language_wrapper'>
+                <div className='change_language'>
                     <div className='contact'>
                         <div className='contact_container'>
                             <span className='dropdown_span_contact'>Contact to Us</span>
@@ -62,6 +70,7 @@ function Navbar() {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 }

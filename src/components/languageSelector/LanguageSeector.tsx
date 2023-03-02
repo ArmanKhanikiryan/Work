@@ -5,9 +5,9 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Russia from '../../../../work-typescript/src/assets/flags/russia.png'
-import UnitedKingdom from '../../../../work-typescript/src/assets/flags/UK.png'
-import Armenia from '../../../../work-typescript/src/assets/flags/armenia.png'
+import Russia from '../../assets/flags/russia.png'
+import UnitedKingdom from '../../assets/flags/UK.png'
+import Armenia from '../../assets/flags/armenia.png'
 
 const countries = [
     {

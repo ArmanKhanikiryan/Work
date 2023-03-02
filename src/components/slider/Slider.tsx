@@ -67,7 +67,7 @@ const ImageCarousel:FC<TSlider> = ({ images }) => {
 
     return (
         <div className="slider_wrapper">
-            <ArrowCircleLeftIcon onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)} style={{fontSize: '50px',color: 'black',opacity: 0.7, position: 'absolute', left: 0,zIndex: 10, bottom: '35%', cursor: 'pointer'}}/>
+            <ArrowCircleLeftIcon className='left_arrow' style={{fontSize: '50px'}} onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)} />
             <Grid container className={classes.carousel}>
                 {images.map((image, index) => (
                     <Grid
@@ -87,7 +87,7 @@ const ImageCarousel:FC<TSlider> = ({ images }) => {
                 ))}
                 <Grid item xs={12} className={classes.control}></Grid>
             </Grid>
-            <ArrowCircleRightIcon onClick={nextSlide} style={{fontSize: '50px', color: 'black', opacity: 0.7,cursor: 'pointer',position: 'absolute', right: 0,zIndex: 10, bottom: '35%',}}/>
+            <ArrowCircleRightIcon className='right_arrow' style={{fontSize: '50px'}} onClick={nextSlide}/>
         </div>
     );
 }

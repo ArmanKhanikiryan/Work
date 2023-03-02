@@ -1,14 +1,14 @@
 import React from 'react';
 import './Home.css'
 import ImageSlider from "../../components/slider/Slider";
-import testPicture from '../../../../work-typescript/src/assets/images/facade.jpg'
-import testPicture2 from '../../../../work-typescript/src/assets/images/facade2.jpg'
-import testPicture3 from '../../../../work-typescript/src/assets/images/facade3.jpg'
-import testPicture4 from '../../../../work-typescript/src/assets/images/facade4.jpg'
-import testPicture6 from '../../../../work-typescript/src/assets/images/facade6.avif'
-import door from  '../../../../work-typescript/src/assets/icons/door.png'
-import window from  '../../../../work-typescript/src/assets/icons/window.png'
-import balcony from '../../../../work-typescript/src/assets/icons/balcony.png'
+import testPicture from '../../assets/images/facade.jpg'
+import testPicture2 from '../..//assets/images/facade2.jpg'
+import testPicture3 from '../../assets/images/facade3.jpg'
+import testPicture4 from '../../assets/images/facade4.jpg'
+import testPicture6 from '../../assets/images/facade6.avif'
+import door from  '../../assets/icons/door.png'
+import window from  '../../assets/icons/window.png'
+import balcony from '../../assets/icons/balcony.png'
 
 
 const images: string[] = [
@@ -43,7 +43,7 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <ImageSlider images={images} />
+            {/*<ImageSlider images={images} />*/}
 
 
             <div className='test_div'>
