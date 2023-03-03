@@ -48,11 +48,6 @@ function Home() {
                 </div>
             </div>
             <ImageSlider images={images} />
-
-
-            <div className='test_div'>
-
-            </div>
         </div>
     );
 }

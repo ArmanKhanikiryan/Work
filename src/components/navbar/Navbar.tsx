@@ -1,10 +1,10 @@
 import React from 'react';
 import './Navbar.css'
 import logo from '../../assets/images/logo.png'
-import menu from '../../assets/icons/menu.png'
 import {useNavigate} from "react-router";
-import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import LanguageSelector from "../languageSelector";
+import DialogComponent from "../dialog";
+import Menu from "../menu";
 
 
 function Navbar() {
@@ -51,11 +51,7 @@ function Navbar() {
                             <span className='dropdown_span' onClick={() => navigate('/about-us')}>About Us</span>
                         </div>
                     </div>
-                    <div className='menu_dropdown'>
-                        <span>Menu</span>
-                        <img className='menu_icon' src={menu} alt="menu"/>
-                    </div>
-
+                    <Menu/>
                 </div>
             </div>
 
@@ -67,14 +63,15 @@ function Navbar() {
                             <span className='dropdown_span_contact'>Contact Info</span>
 
 
-                            <span>info.proffsystem@gmail.com</span>
                             <div className='phone_div'>
                                 <span className='phone_number'>+37491374520</span>
                                 <span className='phone_number'>+37495778844</span>
+                                <span className='phone_number'>info.proffsystem@gmail.com</span>
+
                             </div>
 
 
-                            <PhoneInTalkIcon style={{fontSize: '30px'}} className='phone'/>
+                           <DialogComponent/>
                         </div>
                         <LanguageSelector/>
                     </div>

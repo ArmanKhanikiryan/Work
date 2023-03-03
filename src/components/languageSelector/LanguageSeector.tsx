@@ -17,16 +17,16 @@ const countries = [
         value: "UK"
     },
     {
-        label: "Russia",
-        src: Russia,
-        link: " ",
-        value: "RUS"
-    },
-    {
         label: 'Armenia',
         src: Armenia,
         link: " ",
         value: 'ARM'
+    },
+    {
+        label: "Russia",
+        src: Russia,
+        link: " ",
+        value: "RUS"
     }
 ];
 

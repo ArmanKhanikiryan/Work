@@ -196,23 +196,13 @@ body{
 
 /*MEDIA*/
 
-@media screen and (max-width: 610px) {
-    .menu_dropdown > span{
-        display: none;
-    }
-    .menu_icon{
-        width: 50px;
-    }
-    .dropdown_span_contact{
-        display: none;
-    }
-}
-@media screen and (max-width: 1800px) {
+
+@media screen and (max-width: 1600px) {
     .ul_container{
         justify-content: flex-start;
     }
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1170px) {
     .ul_container{
         display: none;
     }
@@ -222,13 +212,24 @@ body{
         margin-left: 40px;
     }
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 835px) {
     .contact_container > span{
         display: none;
     }
 }
-@media screen and (max-width: 535px) {
+@media screen and (max-width: 720px) {
     .contact_container{
+        display: none;
+    }
+}
+@media screen and (max-width: 420px) {
+    .menu_dropdown > span{
+        display: none;
+    }
+    .menu_icon{
+        width: 50px;
+    }
+    .dropdown_span_contact{
         display: none;
     }
 }
