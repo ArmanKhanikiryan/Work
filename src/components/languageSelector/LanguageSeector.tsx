@@ -1,59 +1,48 @@
-import React, {ChangeEvent, ReactNode} from "react";
-import {useState} from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 import Russia from '../../assets/flags/russia.png'
 import UnitedKingdom from '../../assets/flags/UK.png'
 import Armenia from '../../assets/flags/armenia.png'
+import React from "react";
+
+
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from '@mui/material/Select';
+
+
+
 
 const countries = [
     {
-        label: "UnitedKingdom",
+        label: "English",
         src: UnitedKingdom,
         link: " ",
-        value: "UK"
+        value: "en"
     },
     {
-        label: 'Armenia',
+        label: "Armenian",
         src: Armenia,
         link: " ",
-        value: 'ARM'
+        value: "hy"
     },
     {
-        label: "Russia",
+        label: "Russian",
         src: Russia,
         link: " ",
-        value: "RUS"
+        value: "ru"
     }
 ];
 
-const useStyles = makeStyles(theme => ({
-    button: {
-        display: "block",
-        marginTop: theme.spacing(2)
-    },
-    formControl: {
-        margin: theme.spacing(5),
-        minWidth: 60,
-        backgroundColor: "transparent"
-    },
-    select: {
-        textAlign: "center",
-        textDecoration: "none"
-    }
-}));
 const LanguageSelector = () => {
-    const classes = useStyles();
-    const [country, setCountry] = useState<unknown>(UnitedKingdom);
-    const [open, setOpen] = useState<boolean>(false);
 
-    const handleChange = (event: ChangeEvent<{ name?: string | undefined; value: unknown; }>, child: ReactNode):void => {
-        event && setCountry(event.target.value);
+
+
+    const [country, setCountry] = React.useState(UnitedKingdom);
+    const [open, setOpen] = React.useState(false);
+
+    const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
+        setCountry(event.target.value);
     };
-
 
     const handleClose = () => {
         setOpen(false);
@@ -64,10 +53,11 @@ const LanguageSelector = () => {
     };
 
     return (
-        <form autoComplete="off">
-            <FormControl className={classes.formControl}>
+        <form style={{margin: ' 10px 5px 0 10px' }} autoComplete="off">
+            <FormControl >
                 <InputLabel htmlFor="open-select" />
                 <Select
+                    sx={{border: "none"}}
                     open={open}
                     onClose={handleClose}
                     onOpen={handleOpen}
@@ -80,7 +70,7 @@ const LanguageSelector = () => {
                 >
                     {countries.map((option, key) => (
                         <MenuItem value={option.src} key={key}>
-                            <img src={option.src} width='30px' alt={option.label} />{" "}
+                            <img src={option.src}  alt={option.label} width='25px' />{" "}
                         </MenuItem>
                     ))}
                 </Select>
@@ -88,4 +78,5 @@ const LanguageSelector = () => {
         </form>
     );
 }
+
 export default LanguageSelector;

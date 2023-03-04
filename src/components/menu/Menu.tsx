@@ -1,10 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import menu from "../../assets/icons/menu.png";
+import List from '@mui/material/List';
 import '../navbar/Navbar.css';
 import './Menu.css';
 import door from "../../assets/icons/door.png";

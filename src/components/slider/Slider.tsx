@@ -1,58 +1,13 @@
-import React, {useState, useEffect, FC} from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
+import React, { useState, useEffect, FC } from "react";
+import { Grid } from "@mui/material";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import "../../pages/home/Home.css"
-
-const useStyles = makeStyles((theme) => ({
-    carousel: {
-        display: "flex",
-        justifyContent: "center",
-        position: "relative",
-        height: "75vh",
-        maxWidth: "100%",
-    },
-    slide: {
-        position: "absolute",
-        height: "100%",
-        width: "100%",
-        opacity: 0,
-        transition: "opacity 0.7s ease-in-out",
-    },
-    slideActive: {
-        opacity: 1,
-    },
-    control: {
-        position: "absolute",
-        top: "50%",
-        transform: "translateY(-50%)",
-        zIndex: 1,
-    },
-    prevButton: {
-        width: "100px",
-        height: "100px",
-        left: 0,
-    },
-    nextButton: {
-        right: 0,
-    },
-    controlButton: {
-        backgroundColor: "rgba(255, 255, 255, 0.7)",
-        borderRadius: "50%",
-        padding: 8,
-        "&:hover": {
-            backgroundColor: "rgba(255, 255, 255, 1)",
-        },
-    },
-}));
-
+import './Slider.css'
 type TSlider = {
     images: string[]
 }
 
-const ImageCarousel:FC<TSlider> = ({ images }) => {
-    const classes = useStyles();
+const ImageCarousel: FC<TSlider> = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
 
     function nextSlide() {
@@ -68,14 +23,14 @@ const ImageCarousel:FC<TSlider> = ({ images }) => {
     return (
         <div className="slider_wrapper">
             <ArrowCircleLeftIcon className='left_arrow' style={{fontSize: '50px'}} onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)} />
-            <Grid container className={classes.carousel}>
+            <Grid container className="carousel">
                 {images.map((image, index) => (
                     <Grid
                         item
                         xs={12}
                         key={index}
-                        className={`${classes.slide} ${
-                            index === currentIndex ? classes.slideActive : ""
+                        className={`slide ${
+                            index === currentIndex ? "slide-active" : ""
                         }`}
                     >
                         <img
@@ -85,7 +40,7 @@ const ImageCarousel:FC<TSlider> = ({ images }) => {
                         />
                     </Grid>
                 ))}
-                <Grid item xs={12} className={classes.control}></Grid>
+                <Grid item xs={12} className="control"></Grid>
             </Grid>
             <ArrowCircleRightIcon className='right_arrow' style={{fontSize: '50px'}} onClick={nextSlide}/>
         </div>

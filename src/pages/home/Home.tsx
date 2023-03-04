@@ -10,6 +10,7 @@ import door from  '../../assets/icons/door.png'
 import window from  '../../assets/icons/window.png'
 import balcony from '../../assets/icons/balcony.png'
 import slide from '../../assets/icons/sliding-door.png'
+import Slider from "../../components/slider/Slider";
 
 
 const images: string[] = [

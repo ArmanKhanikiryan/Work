@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar/>
         <Routes>
         {RouteData.map(({path, Component}, index) => (
             <Route key={index} path={path} element={<Component/>}/>
