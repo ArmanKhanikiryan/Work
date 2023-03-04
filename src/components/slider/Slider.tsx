@@ -2,7 +2,8 @@ import React, { useState, useEffect, FC } from "react";
 import { Grid } from "@mui/material";
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import './Slider.css'
+import "./Slider.css"
+
 type TSlider = {
     images: string[]
 }

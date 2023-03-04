@@ -5,6 +5,7 @@ import Home from "./pages/home";
 import Navbar from "./components/navbar";
 import Products from "./pages/products";
 import Service from "./pages/service";
+import Footer from "./components/footer";
 
 export enum RoutesEnum {
     HOME = "/",
