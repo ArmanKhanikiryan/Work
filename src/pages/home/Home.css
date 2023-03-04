@@ -129,8 +129,15 @@
     width: 100%;
 }
 
-.google_maps_div{
+.location{
+    display: flex;
     width: 100%;
+    justify-content: center;
+
+}
+
+.google_maps_div{
+    width: 85%;
     height: 65vh;
     display: flex;
     flex-direction: column;
