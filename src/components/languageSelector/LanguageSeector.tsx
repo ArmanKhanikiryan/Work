@@ -70,8 +70,8 @@ const LanguageSelector = () => {
                     }}
                 >
                     {countries.map((option, key) => (
-                        <MenuItem value={option.src} key={key}>
-                            <img onClick={() => i18n.changeLanguage(option.value)} src={option.src}  alt={option.label} width='25px' />{" "}
+                        <MenuItem onClick={() => i18n.changeLanguage(option.value)} value={option.src} key={key}>
+                            <img src={option.src}  alt={option.label} width='25px' />{" "}
                         </MenuItem>
                     ))}
                 </Select>

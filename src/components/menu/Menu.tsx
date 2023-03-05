@@ -86,7 +86,7 @@ const Menu = () => {
             {(['right'] as const).map((anchor) => (
                 <React.Fragment key={anchor}>
                     <div onClick={toggleDrawer(anchor, true)} className='menu_dropdown'>
-                        <span>Menu</span>
+                        <span>{t("Menu")}</span>
                         <img className='menu_icon' src={menu} alt="menu"/>
                     </div>
                     <Drawer
