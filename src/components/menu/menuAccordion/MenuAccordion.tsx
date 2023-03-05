@@ -29,10 +29,6 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
         {...props}
     />
 ))(({ theme }) => ({
-    backgroundColor:
-        theme.palette.mode === 'dark'
-            ? 'rgba(255, 255, 255, .05)'
-            : 'rgba(0, 0, 0, .03)',
     flexDirection: 'row-reverse',
     '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
         transform: 'rotate(90deg)',
@@ -55,12 +51,19 @@ const MenuAccordion = () => {
             setExpanded(newExpanded ? panel : false);
         };
 
+    const handelMouseEnter = (panel: string) => () => {
+        setExpanded(panel)
+    }
+    const handleMouseLeave = () => {
+        setExpanded(false)
+    }
+
     const navigate = useNavigate()
 
     return (
         <div>
 
-            <Accordion className='accordion_element' expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            <Accordion className='accordion_element' expanded={expanded === 'panel1'} onMouseLeave={handleMouseLeave} onMouseEnter={handelMouseEnter('panel1')}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                     <Typography>Products</Typography>
                 </AccordionSummary>
@@ -75,7 +78,7 @@ const MenuAccordion = () => {
                 </AccordionDetails>
             </Accordion>
 
-            <Accordion className='accordion_element' expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+            <Accordion className='accordion_element' expanded={expanded === 'panel2'} onMouseLeave={handleMouseLeave} onMouseEnter={handelMouseEnter('panel2')}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                     <Typography>Service</Typography>
                 </AccordionSummary>

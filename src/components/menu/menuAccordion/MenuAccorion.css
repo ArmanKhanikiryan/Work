@@ -2,7 +2,6 @@
     padding: 10px 10px 13px 55px;
     cursor: pointer;
     transition: background-color 0.5s ease ;
-    background-color: #f7f7f7;
 }
 .accordion_inner_element:hover{
     background-color: #bccfd7;
@@ -10,7 +9,6 @@
 }
 
 .about_us_button_menu{
-    background-color: #f7f7f7;
     border: 1px solid lightgrey;
     width: 85%;
     padding: 13px 0 13px 39px;

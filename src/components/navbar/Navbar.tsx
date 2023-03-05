@@ -5,6 +5,7 @@ import {useNavigate} from "react-router";
 import LanguageSelector from "../languageSelector";
 import DialogComponent from "../dialog";
 import Menu from "../menu";
+import NavbarAccordion from "./navbarAccordion";
 
 
 function Navbar() {
@@ -60,16 +61,8 @@ function Navbar() {
                     <div className='contact'>
                         <div className='contact_container'>
 
-                            <span className='dropdown_span_contact'>Contact Info</span>
 
-
-                            <div className='phone_div'>
-                                <span className='phone_number'>+37491374520</span>
-                                <span className='phone_number'>+37495778844</span>
-                                <span className='phone_number'>info.proffsystem@gmail.com</span>
-
-                            </div>
-
+                            <NavbarAccordion/>
 
                            <DialogComponent/>
                         </div>
