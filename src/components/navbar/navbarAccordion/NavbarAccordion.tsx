@@ -57,7 +57,7 @@ const NavbarAccordion = () => {
     return (
         <div>
 
-            <Accordion className='accordion_element' sx={{position: 'fixed', right: '150px',top: "30px"}} expanded={expanded === 'panel1'} onMouseLeave={handleMouseLeave} onMouseEnter={handelMouseEnter}>
+            <Accordion className='accordion_element' sx={{position: 'absolute', right: '150px',top: "15px", borderRadius: '5px'}} expanded={expanded === 'panel1'} onMouseLeave={handleMouseLeave} onMouseEnter={handelMouseEnter}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                     <Typography>Contact Info</Typography>
                 </AccordionSummary>
