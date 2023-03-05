@@ -45,11 +45,15 @@
 .icons_wrapper{
     padding: 10px;
     height: 60px;
-    width: 100px;
+    width: 150px;
     cursor: pointer;
     display: flex;
     align-items: center;
     transition: background-color 0.5s ease;
+    justify-content: center;
+}
+.icons_wrapper > span {
+    text-align: center;
 }
 .icons_wrapper:hover{
     background-color: #bccfd7;
@@ -88,7 +92,7 @@
     padding-right: 5px;
 }
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 700px) {
     .icons_wrapper > span{
         display: none;
     }

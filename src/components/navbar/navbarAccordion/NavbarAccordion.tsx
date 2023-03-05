@@ -9,6 +9,7 @@ import MuiAccordionSummary, {
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import {useNavigate} from "react-router";
+import {useTranslation} from "react-i18next";
 
 const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -52,14 +53,15 @@ const NavbarAccordion = () => {
         setExpanded(false)
     }
 
+    const { t } = useTranslation()
 
 
     return (
         <div>
 
-            <Accordion className='accordion_element' sx={{position: 'absolute', right: '150px',top: "15px", borderRadius: '5px'}} expanded={expanded === 'panel1'} onMouseLeave={handleMouseLeave} onMouseEnter={handelMouseEnter}>
+            <Accordion className='accordion_element' sx={{whiteSpace: 'nowrap',position: 'absolute', right: '150px',top: "15px", borderRadius: '5px'}} expanded={expanded === 'panel1'} onMouseLeave={handleMouseLeave} onMouseEnter={handelMouseEnter}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                    <Typography>Contact Info</Typography>
+                    <Typography>{t('Contact Info')}</Typography>
                 </AccordionSummary>
                 <AccordionDetails style={{cursor: 'auto'}} className='accordion_inner_element'>
                     <span>+37491374520</span>

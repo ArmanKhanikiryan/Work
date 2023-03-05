@@ -2,12 +2,13 @@ import Russia from '../../assets/flags/russia.png'
 import UnitedKingdom from '../../assets/flags/UK.png'
 import Armenia from '../../assets/flags/armenia.png'
 import React from "react";
-
-
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from '@mui/material/Select';
+import {useTranslation} from "react-i18next";
+
+
 
 
 
@@ -35,8 +36,6 @@ const countries = [
 
 const LanguageSelector = () => {
 
-
-
     const [country, setCountry] = React.useState(UnitedKingdom);
     const [open, setOpen] = React.useState(false);
 
@@ -51,6 +50,8 @@ const LanguageSelector = () => {
     const handleOpen = () => {
         setOpen(true);
     };
+
+    const { t, i18n } = useTranslation()
 
     return (
         <form style={{margin: ' 10px 5px 0 10px' }} autoComplete="off">
@@ -70,7 +71,7 @@ const LanguageSelector = () => {
                 >
                     {countries.map((option, key) => (
                         <MenuItem value={option.src} key={key}>
-                            <img src={option.src}  alt={option.label} width='25px' />{" "}
+                            <img onClick={() => i18n.changeLanguage(option.value)} src={option.src}  alt={option.label} width='25px' />{" "}
                         </MenuItem>
                     ))}
                 </Select>

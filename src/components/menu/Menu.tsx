@@ -13,6 +13,7 @@ import logo from "../../assets/images/logo.png";
 import {useNavigate} from "react-router";
 import MenuAccordion from "./menuAccordion";
 import LanguageSelector from "../languageSelector";
+import {useTranslation} from "react-i18next";
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
@@ -24,6 +25,7 @@ const Menu = () => {
         right: false,
     });
     const navigate = useNavigate()
+    const { t } = useTranslation()
     const toggleDrawer =
         (anchor: Anchor, open: boolean) =>
             (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -37,7 +39,6 @@ const Menu = () => {
 
                 setState({ ...state, [anchor]: open });
             };
-
     const list = (anchor: Anchor) => (
         <Box
             sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 275 }}
@@ -51,22 +52,22 @@ const Menu = () => {
                 </div>
                 <div className='icons_wrapper_menu'>
                     <img className='header_icons_menu' src={door} alt="door"/>
-                    <span> Doors </span>
+                    <span> {t("Doors")} </span>
                 </div>
 
                 <div className='icons_wrapper_menu'>
                     <img className='header_icons_menu' src={window} alt="window"/>
-                    <span> Windows </span>
+                    <span> {t("Windows")} </span>
                 </div>
 
                 <div className='icons_wrapper_menu'>
                     <img className='header_icons_menu' src={balcony} alt="window"/>
-                    <span>Balcony</span>
+                    <span>{t("Balcony")}</span>
                 </div>
 
                 <div className='icons_wrapper_menu'>
                     <img className='header_icons_menu' src={slide} alt="slide"/>
-                    <span>Slide</span>
+                    <span>{t("Slide")}</span>
                 </div>
             </List>
             <List>

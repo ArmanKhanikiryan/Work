@@ -10,6 +10,7 @@ import door from  '../../assets/icons/door.png'
 import window from  '../../assets/icons/window.png'
 import balcony from '../../assets/icons/balcony.png'
 import slide from '../../assets/icons/sliding-door.png'
+import {useTranslation} from "react-i18next";
 
 
 const images: string[] = [
@@ -20,7 +21,9 @@ const images: string[] = [
     testPicture6
 ];
 
-function Home() {
+
+const Home = () => {
+    const { t } = useTranslation()
     return (
         <div>
             <div className='home_header_wrapper'>
@@ -28,21 +31,21 @@ function Home() {
                     <div className='header_image_div'>
                         <div className='icons_wrapper'>
                             <img className='header_icons' src={door} alt="door"/>
-                            <span> Doors </span>
+                            <span> {t("Doors")} </span>
                         </div>
 
                         <div className='icons_wrapper'>
                             <img className='header_icons' src={window} alt="window"/>
-                            <span> Windows </span>
+                            <span> {t("Windows")} </span>
                         </div>
 
                         <div className='icons_wrapper'>
                             <img className='header_icons' src={balcony} alt="window"/>
-                            <span>Balcony</span>
+                            <span> {t("Balcony")}</span>
                         </div>
                         <div className='icons_wrapper'>
                             <img className='header_icons' src={slide} alt="slide"/>
-                            <span>Slide</span>
+                            <span> {t("Slide")}</span>
                         </div>
                     </div>
                 </div>
@@ -61,7 +64,7 @@ function Home() {
 
                     <div className='location_info'>
 
-                    <h1>Our Location</h1>
+                    <h1>{t("Our Location")}</h1>
 
                     </div>
 

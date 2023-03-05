@@ -10,6 +10,7 @@ import MuiAccordionSummary, {
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import {useNavigate} from "react-router";
+import {useTranslation} from "react-i18next";
 
 const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -52,36 +53,37 @@ const MenuAccordion = () => {
         };
 
     const navigate = useNavigate()
+    const { t } = useTranslation()
 
     return (
         <div>
             <Accordion className='accordion_element' expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                    <Typography>Products</Typography>
+                    <Typography>{t("Products")}</Typography>
                 </AccordionSummary>
                 <AccordionDetails onClick={() => navigate('/products/1p')} className='accordion_inner_element'>
-                    <span>1 Product</span>
+                    <span>1 {t("Products")}</span>
                 </AccordionDetails>
                 <AccordionDetails onClick={() => navigate('/products/2p')} className='accordion_inner_element'>
-                    <span>2 Product</span>
+                    <span>2 {t("Products")}</span>
                 </AccordionDetails>
                 <AccordionDetails onClick={() => navigate('/products/3p')} className='accordion_inner_element'>
-                    <span>3 Product</span>
+                    <span>3 {t("Products")}</span>
                 </AccordionDetails>
             </Accordion>
 
             <Accordion className='accordion_element' expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                    <Typography>Service</Typography>
+                    <Typography>{t("Service")}</Typography>
                 </AccordionSummary>
                 <AccordionDetails onClick={() => navigate('/service/1s')} className='accordion_inner_element'>
-                    <span>1 Service</span>
+                    <span>1 {t("Service")}</span>
                 </AccordionDetails>
                 <AccordionDetails onClick={() => navigate('/service/2s')} className='accordion_inner_element'>
-                    <span>2 Service</span>
+                    <span>2 {t("Service")}</span>
                 </AccordionDetails>
                 <AccordionDetails onClick={() => navigate('/service/3s')} className='accordion_inner_element'>
-                    <span>3 Service</span>
+                    <span>3 {t("Service")}</span>
                 </AccordionDetails>
             </Accordion>
             <Typography onClick={() => navigate('/about-us')} style={{fontSize: '16px'}} className='about_us_button_menu' variant="h6">About Us</Typography>
