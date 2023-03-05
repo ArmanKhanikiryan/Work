@@ -60,7 +60,7 @@
     position: absolute;
     z-index: 1;
     left: 0;
-    top: 50%;
+    top: 59%;
     color: rgba(0,0,0, 0.5);
 }
 .left_arrow:hover{
@@ -76,7 +76,7 @@
     position: absolute;
     z-index: 1;
     right: 0;
-    top: 50%;
+    top: 59%;
     color: rgba(0,0,0, 0.5);
 }
 

@@ -44,26 +44,18 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 const MenuAccordion = () => {
-    const [expanded, setExpanded] = React.useState<string | false>(false);
 
+    const [expanded, setExpanded] = React.useState<string | false>(false);
     const handleChange =
         (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
             setExpanded(newExpanded ? panel : false);
         };
 
-    const handelMouseEnter = (panel: string) => () => {
-        setExpanded(panel)
-    }
-    const handleMouseLeave = () => {
-        setExpanded(false)
-    }
-
     const navigate = useNavigate()
 
     return (
         <div>
-
-            <Accordion className='accordion_element' expanded={expanded === 'panel1'} onMouseLeave={handleMouseLeave} onMouseEnter={handelMouseEnter('panel1')}>
+            <Accordion className='accordion_element' expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                     <Typography>Products</Typography>
                 </AccordionSummary>
@@ -78,7 +70,7 @@ const MenuAccordion = () => {
                 </AccordionDetails>
             </Accordion>
 
-            <Accordion className='accordion_element' expanded={expanded === 'panel2'} onMouseLeave={handleMouseLeave} onMouseEnter={handelMouseEnter('panel2')}>
+            <Accordion className='accordion_element' expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                     <Typography>Service</Typography>
                 </AccordionSummary>
