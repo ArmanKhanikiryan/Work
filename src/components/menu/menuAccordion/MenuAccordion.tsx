@@ -86,7 +86,7 @@ const MenuAccordion = () => {
                     <span>3 {t("Service")}</span>
                 </AccordionDetails>
             </Accordion>
-            <Typography onClick={() => navigate('/about-us')} style={{fontSize: '16px'}} className='about_us_button_menu' variant="h6">About Us</Typography>
+            <Typography onClick={() => navigate('/about-us')} style={{fontSize: '16px'}} className='about_us_button_menu' variant="h6">{t('About Us')}</Typography>
         </div>
     );
 }
