@@ -91,7 +91,7 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    padding: 5px 20px 10px 2px;
+    padding: 5px 20px 10px 0;
     justify-content: space-around;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -113,21 +113,24 @@
     border-bottom-right-radius: 5px;
 }
 
+
 .dropdown_element > span{
+    background-color: white;
+    background-image: linear-gradient(to right, white 50%, rgba(188,207,215, 0.3) 50%);
+    background-size: 200% 100%;
+    transition: background-position 0.5s ease;
     display: flex;
     align-items: center;
     white-space: nowrap;
-    width: 517px;
+    width: 500px;
     height: 5vh;
     font-weight: lighter;
     font-size: 17px;
     padding-left: 20px;
     border-radius: 3px;
-    transition: background-color 0.5s ease;
 }
 .dropdown_element > span:hover{
-    background-color: #bccfd7;
-    opacity: 0.6;
+    background-position: -100% 0;
     color: black;
 }
 .dropdown_span_contact{
