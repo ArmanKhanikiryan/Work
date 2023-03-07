@@ -6,11 +6,13 @@ import Navbar from "./components/navbar";
 import Products from "./pages/products";
 import Service from "./pages/service";
 import Footer from "./components/footer";
+import TransferToBack from "./TrabsferToBack/TransferToBack";
 
 export enum RoutesEnum {
     HOME = "/",
     Products = "/products",
     Service = "/service",
+    Transfer = "/transfer"
 }
 
 export type RouteType = {
@@ -30,6 +32,10 @@ const RouteData:RouteType[] = [
     {
         path: RoutesEnum.Service,
         Component: Service,
+    },
+    {
+        path: RoutesEnum.Transfer,
+        Component: TransferToBack
     }
 ]
 
