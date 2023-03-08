@@ -10,9 +10,18 @@ type TSlider = {
 
 const ImageCarousel: FC<TSlider> = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
+    const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
     function nextSlide() {
-        setCurrentIndex((currentIndex + 1) % images.length);
+        if (isAnimating) {
+            return;
+        }
+
+        setIsAnimating(true);
+        setTimeout(() => {
+            setCurrentIndex((currentIndex + 1) % images.length);
+            setIsAnimating(false);
+        }, 1000);
     }
 
     useEffect(() => {
@@ -37,7 +46,14 @@ const ImageCarousel: FC<TSlider> = ({ images }) => {
                         <img
                             src={image}
                             alt={`Slide ${index + 1}`}
-                            style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: '5px' }}
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                                borderRadius: '5px',
+                                opacity: (index === currentIndex || isAnimating) ? 1 : 0,
+                                transition: "opacity 1s ease-in-out"
+                            }}
                         />
                     </Grid>
                 ))}
