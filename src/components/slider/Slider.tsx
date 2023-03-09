@@ -11,7 +11,6 @@ type TSlider = {
 const ImageCarousel: FC<TSlider> = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
-
     const nextSlide = () => {
         if (isAnimating) {
             return;
@@ -22,13 +21,16 @@ const ImageCarousel: FC<TSlider> = ({ images }) => {
             setCurrentIndex((currentIndex + 1) % images.length);
             setIsAnimating(false);
         }, 1000);
-    }
+    };
+
+
+    let timeoutId = setTimeout(() => {
+        nextSlide();
+    }, 5000);
 
     useEffect(() => {
-        const intervalId = setInterval(nextSlide, 5000);
-
-        return () => clearInterval(intervalId);
-    }, [currentIndex]);
+        return () => clearTimeout(timeoutId);
+    }, []);
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -46,6 +48,10 @@ const ImageCarousel: FC<TSlider> = ({ images }) => {
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [currentIndex]);
+
+    const handleForwardImage = () => {
+        setCurrentIndex((currentIndex + 1) % images.length)
+    }
 
     return (
         <div className="slider_wrapper">
@@ -74,7 +80,7 @@ const ImageCarousel: FC<TSlider> = ({ images }) => {
                                 height: "100%",
                                 objectFit: "cover",
                                 borderRadius: "5px",
-                                opacity: index === currentIndex || isAnimating ? 1 : 0,
+                                opacity: index === currentIndex || isAnimating ? 1 : 1,
                                 transition: "opacity 1s ease-in-out",
                             }}
                         />
@@ -85,9 +91,7 @@ const ImageCarousel: FC<TSlider> = ({ images }) => {
             <ArrowCircleRightIcon
                 className="right_arrow"
                 style={{ fontSize: "50px" }}
-                onClick={() =>
-                    setCurrentIndex((currentIndex + 1) % images.length)
-                }
+                onClick={handleForwardImage}
             />
         </div>
     );
