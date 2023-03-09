@@ -26,32 +26,32 @@ const Home = () => {
   const [image, setImage] = useState<string[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
 
-  const getData = async (fetchNumber: number) => {
-    try {
-      const response = await axios.get(
-        `http://localhost:3333/get${fetchNumber}`
-      );
-      for (let i = 0; i < response.data.length; i++) {
-        const data = new Uint8Array(Object.values(response.data[i]));
-        const decompressedData = pako.inflate(data);
-        const blob = new Blob([decompressedData.buffer]);
-        const imageUrl = URL.createObjectURL(blob);
-        setImage((prevState) => {
-          return [...prevState, imageUrl];
-        });
-        setLoaded(true);
-      }
-    } catch (error) {
-      console.log(`Something is wrong ${error}`);
-    }
-  };
-
-  useEffect(() => {
-    getData(1).then();
-    setTimeout(() => {
-      getData(2).then();
-    }, 2500);
-  }, []);
+  // const getData = async (fetchNumber: number) => {
+  //   try {
+  //     const response = await axios.get(
+  //       `http://localhost:3333/get${fetchNumber}`
+  //     );
+  //     for (let i = 0; i < response.data.length; i++) {
+  //       const data = new Uint8Array(Object.values(response.data[i]));
+  //       const decompressedData = pako.inflate(data);
+  //       const blob = new Blob([decompressedData.buffer]);
+  //       const imageUrl = URL.createObjectURL(blob);
+  //       setImage((prevState) => {
+  //         return [...prevState, imageUrl];
+  //       });
+  //       setLoaded(true);
+  //     }
+  //   } catch (error) {
+  //     console.log(`Something is wrong ${error}`);
+  //   }
+  // };
+  //
+  // useEffect(() => {
+  //   getData(1).then();
+  //   setTimeout(() => {
+  //     getData(2).then();
+  //   }, 2500);
+  // }, []);
 
   return (
     <>
@@ -101,7 +101,7 @@ const Home = () => {
         </div>
       ) : (
         <div className="loading">
-          <CircularIndeterminate />
+          <CircularIndeterminate/>
         </div>
       )}
     </>
