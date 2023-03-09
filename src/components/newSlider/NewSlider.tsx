@@ -1,17 +1,23 @@
 import './NewSlider.css';
-import React from "react";
+import React, {FC, useEffect} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import './NewSlider.css'
-import img1 from '../../assets/images/facade.jpg'
-import img2 from '../../assets/images/facade2.jpg'
-import img3 from '../../assets/images/facade3.jpg'
-import img4 from '../../assets/images/facade4.jpg'
 import { Autoplay, Pagination, Navigation } from "swiper";
+import {useAppDispatch, useAppSelector} from "../../features/store";
+import {getImagesArplas} from "../../features/arplas/arplasSlicer";
 
 
-const NewSlider = () => {
+const NewSlider= () => {
+
+    const stateArplas = useAppSelector(state1 => state1.arplas)
+    const dispatch = useAppDispatch()
+
+
+    useEffect(() => {
+        dispatch(getImagesArplas())
+    }, [])
     return (
         <>
             <Swiper
@@ -27,18 +33,11 @@ const NewSlider = () => {
                     clickable: true,
                 }}
             >
-                <SwiperSlide>
-                    <img src={img1} alt=""/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={img2} alt=""/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={img3} alt=""/>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={img4} alt=""/>
-                </SwiperSlide>
+                {stateArplas.length ?  stateArplas.map((elem, index) => {
+                    return <SwiperSlide key={index}>
+                        <img src={elem.url} alt=""/>
+                    </SwiperSlide>
+                }) : null}
             </Swiper>
         </>
     );

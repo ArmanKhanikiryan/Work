@@ -6,17 +6,15 @@ import window from "../../assets/icons/window.png";
 import balcony from "../../assets/icons/balcony.png";
 import slide from "../../assets/icons/sliding-door.png";
 import { useTranslation } from "react-i18next";
+import {useAppDispatch} from "../../features/store";
 
-import CircularIndeterminate from "../../transfersToBack/Progress";
 
 const Home = () => {
   const { t } = useTranslation();
   const [image, setImage] = useState<string[]>([]);
 
-
   useEffect(() => {
-
-    fetch('http://localhost:3333/images')
+    fetch('http://localhost:3333/images-main')
         .then(res => res.json())
         .then(data => {
           data.forEach((elem: any) => setImage(prevState => [...prevState, elem.url]))
@@ -71,8 +69,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      )
-      )}
+
     </>
   );
 };

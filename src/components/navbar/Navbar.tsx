@@ -30,25 +30,25 @@ const Navbar = () => {
             <div className="dropdown_component">
               <span
                 className="dropdown_span"
-                onClick={() => navigate("/products")}
+                onClick={() => navigate("/mainSlider")}
               >
                 {t("Products")}
               </span>
               <div className="dropdown">
                 <div
-                  onClick={() => navigate("/products/1p")}
+                  onClick={() => navigate("/mainSlider/1p")}
                   className="dropdown_element"
                 >
                   <span>1 {t("Products")}</span>
                 </div>
                 <div
-                  onClick={() => navigate("/products/2p")}
+                  onClick={() => navigate("/mainSlider/2p")}
                   className="dropdown_element"
                 >
                   <span>2 {t("Products")}</span>
                 </div>
                 <div
-                  onClick={() => navigate("/products/3p")}
+                  onClick={() => navigate("/mainSlider/3p")}
                   className="dropdown_element"
                 >
                   <span>3 {t("Products")}</span>
