@@ -12,7 +12,6 @@ import CircularIndeterminate from "../../transfersToBack/Progress";
 const Home = () => {
   const { t } = useTranslation();
   const [image, setImage] = useState<string[]>([]);
-  const [loaded, setLoaded] = useState<boolean>(false);
 
 
   useEffect(() => {
@@ -20,7 +19,6 @@ const Home = () => {
     fetch('http://localhost:3333/images')
         .then(res => res.json())
         .then(data => {
-          setLoaded(true)
           data.forEach((elem: any) => setImage(prevState => [...prevState, elem.url]))
         })
   }, [])
@@ -30,7 +28,6 @@ const Home = () => {
 
   return (
     <>
-      {loaded ? (
         <div>
           <div className="home_header_wrapper">
             <div className="home_header">
@@ -74,10 +71,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <div className="loading">
-          <CircularIndeterminate/>
-        </div>
+      )
       )}
     </>
   );
