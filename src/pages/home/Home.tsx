@@ -53,6 +53,23 @@ const Home = () => {
   //   }, 2500);
   // }, []);
 
+
+
+
+
+  useEffect(() => {
+
+    fetch('http://localhost:3333/images')
+        .then(res => res.json())
+        .then(data => {
+          setLoaded(true)
+          data.forEach((elem: any) => setImage(prevState => [...prevState, elem.url]))
+        })
+  }, [])
+
+
+
+
   return (
     <>
       {loaded ? (
