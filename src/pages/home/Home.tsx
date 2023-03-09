@@ -1,60 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import ImageSlider from "../../components/slider/Slider";
-import testPicture from "../../assets/images/facade.jpg";
-import testPicture2 from "../..//assets/images/facade2.jpg";
-import testPicture3 from "../../assets/images/facade3.jpg";
-import testPicture4 from "../../assets/images/facade4.jpg";
 import door from "../../assets/icons/door.png";
 import window from "../../assets/icons/window.png";
 import balcony from "../../assets/icons/balcony.png";
 import slide from "../../assets/icons/sliding-door.png";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
-import pako from "pako";
-import CircularIndeterminate from "../../transfersToBack/Progress";
 
-const images: string[] = [
-  testPicture,
-  testPicture2,
-  testPicture3,
-  testPicture4,
-];
+import CircularIndeterminate from "../../transfersToBack/Progress";
 
 const Home = () => {
   const { t } = useTranslation();
   const [image, setImage] = useState<string[]>([]);
   const [loaded, setLoaded] = useState<boolean>(false);
-
-  // const getData = async (fetchNumber: number) => {
-  //   try {
-  //     const response = await axios.get(
-  //       `http://localhost:3333/get${fetchNumber}`
-  //     );
-  //     for (let i = 0; i < response.data.length; i++) {
-  //       const data = new Uint8Array(Object.values(response.data[i]));
-  //       const decompressedData = pako.inflate(data);
-  //       const blob = new Blob([decompressedData.buffer]);
-  //       const imageUrl = URL.createObjectURL(blob);
-  //       setImage((prevState) => {
-  //         return [...prevState, imageUrl];
-  //       });
-  //       setLoaded(true);
-  //     }
-  //   } catch (error) {
-  //     console.log(`Something is wrong ${error}`);
-  //   }
-  // };
-  //
-  // useEffect(() => {
-  //   getData(1).then();
-  //   setTimeout(() => {
-  //     getData(2).then();
-  //   }, 2500);
-  // }, []);
-
-
-
 
 
   useEffect(() => {
