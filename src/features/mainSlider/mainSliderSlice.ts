@@ -1,35 +1,33 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 
-const getImagesSlider = createAsyncThunk('fetch/mainSliderSlice', async (arg, thunkAPI) => {
+export const getMainImages = createAsyncThunk('fetch/mainSliderSlice', async (arg, thunkAPI) => {
+
     try {
-        fetch('http://localhost:3333/images-main')
-            .then(res => res.json)
-            .then(data => data)
+        const response = await fetch('http://localhost:3333/images-main')
+        return response.json()
 
     }catch (error){
         thunkAPI.rejectWithValue(error)
     }
 })
 
-export interface ToDoState {
-    imgUrl: string
+export interface TMainSlider {
+    name: string,
+    url: string
 }
-const initialState: ToDoState[] = [
-    {
-        imgUrl: ''
-    }
-]
+const initialState: TMainSlider[] = []
 
 const mainSliderSlice = createSlice({
     name: 'main-slider-images',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getImagesSlider.fulfilled, (state, action) => {
-
-        }).addCase(getImagesSlider.rejected, (state,action) => {
-
+        builder.addCase(getMainImages.fulfilled, (state:TMainSlider[], action: PayloadAction<TMainSlider[]>): TMainSlider[] => {
+            state = action.payload
+            return state
+        }).addCase(getMainImages.rejected, (state,action) => {
+            console.log('Error occurred')
         })
     }
 })

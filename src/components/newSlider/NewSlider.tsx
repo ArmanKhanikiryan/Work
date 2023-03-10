@@ -5,19 +5,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import './NewSlider.css'
 import { Autoplay, Pagination, Navigation } from "swiper";
-import {useAppDispatch, useAppSelector} from "../../features/store";
-import {getImagesArplas} from "../../features/arplas/arplasSlicer";
+import {TMainSlider} from "../../features/mainSlider/mainSliderSlice";
+
+type TNewSlide = {
+    imagesArray: TMainSlider[]
+}
 
 
-const NewSlider= () => {
+const NewSlider:FC<TNewSlide> = ({imagesArray}) => {
 
-    const stateArplas = useAppSelector(state1 => state1.arplas)
-    const dispatch = useAppDispatch()
-
-
-    useEffect(() => {
-        dispatch(getImagesArplas())
-    }, [])
     return (
         <>
             <Swiper
@@ -33,11 +29,11 @@ const NewSlider= () => {
                     clickable: true,
                 }}
             >
-                {stateArplas.length ?  stateArplas.map((elem, index) => {
+                {imagesArray.map((elem, index) => {
                     return <SwiperSlide key={index}>
-                        <img src={elem.url} alt=""/>
+                        <img style={{height: '60vh'}} src={elem.url} alt=""/>
                     </SwiperSlide>
-                }) : null}
+                })}
             </Swiper>
         </>
     );

@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
-import ImageSlider from "../../components/slider/Slider";
-import door from "../../assets/icons/door.png";
-import window from "../../assets/icons/window.png";
-import balcony from "../../assets/icons/balcony.png";
-import slide from "../../assets/icons/sliding-door.png";
+import door from "assets/icons/door.png";
+import window from "assets/icons/window.png";
+import balcony from "assets/icons/balcony.png";
+import slide from "assets/icons/sliding-door.png";
 import { useTranslation } from "react-i18next";
-import {useAppDispatch} from "../../features/store";
+import {useAppDispatch, useAppSelector} from "../../features/store";
+import {getMainImages} from "../../features/mainSlider/mainSliderSlice";
+import NewSlider from "../../components/newSlider";
 
 
 const Home = () => {
   const { t } = useTranslation();
-  const [image, setImage] = useState<string[]>([]);
-
+  const mainSlider = useAppSelector(state => state.mainSlider)
+  const dispatch = useAppDispatch()
   useEffect(() => {
-    fetch('http://localhost:3333/images-main')
-        .then(res => res.json())
-        .then(data => {
-          data.forEach((elem: any) => setImage(prevState => [...prevState, elem.url]))
-        })
+    dispatch(getMainImages())
   }, [])
 
 
 
+  console.log(mainSlider)
 
   return (
     <>
@@ -51,7 +49,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <ImageSlider images={image} />
+          <NewSlider imagesArray={mainSlider}/>
+
 
           <div className="home_body">
             <div className="location">

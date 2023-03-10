@@ -5,7 +5,7 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 const store = configureStore({
     reducer: {
-        slider: mainSlider,
+        mainSlider: mainSlider,
         arplas: arplasSlicer,
     }
 })

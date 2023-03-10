@@ -22,22 +22,13 @@ const arplasSlider = createSlice({
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(getImagesArplas.fulfilled, (state, action): TArplas[] => {
+        builder.addCase(getImagesArplas.fulfilled, (state, action: PayloadAction<TArplas[]>): TArplas[] => {
             state = action.payload
             return state
-        }).addCase(getImagesArplas.rejected, (state,action) => {
-
+        }).addCase(getImagesArplas.rejected, () => {
+            console.log('Error occurred')
         })
     }
 })
-
-    // .addCase(getPosts.fulfilled, (state,action:PayloadAction<Tpost>) => {
-    //     for(let i = 0;i<action.payload.length;i++){
-    //         state[i]={images:action.payload[i].images , _doc:action.payload[i]._doc}
-    //     }
-    // })
-    // .addCase(getPosts.rejected, () => {
-    //     console.error("Something was wrong");
-    // });
 
 export default arplasSlider.reducer;
