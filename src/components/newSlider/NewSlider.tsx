@@ -1,41 +1,74 @@
-import './NewSlider.css';
-import React, {FC, useEffect} from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import './NewSlider.css'
-import { Autoplay, Pagination, Navigation } from "swiper";
-import {TMainSlider} from "../../features/mainSlider/mainSliderSlice";
+import React, { useState, useEffect, FC } from "react";
+import { Grid } from "@mui/material";
+import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import "./NewSlider.css";
+import { TMainSlider } from "../../features/mainSlider/mainSliderSlice";
 
-type TNewSlide = {
-    imagesArray: TMainSlider[]
-}
+type TSlider = {
+  imagesArray: TMainSlider[];
+};
 
+const NewSlider: FC<TSlider> = ({ imagesArray }) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const handlePrev = () => {
+    if (currentIndex === 0) {
+      setCurrentIndex(3);
+      return;
+    }
+    setCurrentIndex(currentIndex - 1);
+  };
 
-const NewSlider:FC<TNewSlide> = ({imagesArray}) => {
+  const handleNext = () => {
+    if (currentIndex === 3) {
+      setCurrentIndex(0);
+      return;
+    }
+    setCurrentIndex(currentIndex + 1);
+  };
 
-    return (
-        <>
-            <Swiper
-                rewind={true}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-            >
-                {imagesArray.map((elem, index) => {
-                    return <SwiperSlide key={index}>
-                        <img style={{height: '60vh'}} src={elem.url} alt=""/>
-                    </SwiperSlide>
-                })}
-            </Swiper>
-        </>
-    );
-}
+  useEffect(() => {
+    const intervalId = setInterval(handleNext, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [currentIndex]);
+
+  return (
+    <div className="slider_wrapper">
+      <ArrowCircleLeftIcon
+        className="left_arrow"
+        style={{ fontSize: "50px" }}
+        onClick={handlePrev}
+      />
+      <Grid container className="carousel">
+        {imagesArray.map((image, index) => (
+          <Grid
+            item
+            xs={12}
+            key={index}
+            className={`slide ${index === currentIndex ? "slide-active" : ""}`}
+          >
+            <img
+              src={image.url}
+              alt={`Slide ${index + 1}`}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "5px",
+              }}
+            />
+          </Grid>
+        ))}
+        <Grid item xs={12} className="control"></Grid>
+      </Grid>
+      <ArrowCircleRightIcon
+        className="right_arrow"
+        style={{ fontSize: "50px" }}
+        onClick={handleNext}
+      />
+    </div>
+  );
+};
+
 export default NewSlider;

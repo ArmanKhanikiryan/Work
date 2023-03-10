@@ -18,10 +18,6 @@ const Home = () => {
     dispatch(getMainImages())
   }, [])
 
-
-
-  console.log(mainSlider)
-
   return (
     <>
         <div>
