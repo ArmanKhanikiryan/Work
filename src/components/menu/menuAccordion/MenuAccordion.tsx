@@ -60,13 +60,13 @@ const MenuAccordion = () => {
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                     <Typography>{t("Products")}</Typography>
                 </AccordionSummary>
-                <AccordionDetails onClick={() => navigate('/products/1p')} className='accordion_inner_element'>
+                <AccordionDetails onClick={() => navigate('/mainSlider/1p')} className='accordion_inner_element'>
                     <span>1 {t("Products")}</span>
                 </AccordionDetails>
-                <AccordionDetails onClick={() => navigate('/products/2p')} className='accordion_inner_element'>
+                <AccordionDetails onClick={() => navigate('/mainSlider/2p')} className='accordion_inner_element'>
                     <span>2 {t("Products")}</span>
                 </AccordionDetails>
-                <AccordionDetails onClick={() => navigate('/products/3p')} className='accordion_inner_element'>
+                <AccordionDetails onClick={() => navigate('/mainSlider/3p')} className='accordion_inner_element'>
                     <span>3 {t("Products")}</span>
                 </AccordionDetails>
             </Accordion>

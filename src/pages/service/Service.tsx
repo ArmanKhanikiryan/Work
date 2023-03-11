@@ -1,12 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import TransferToBack from "../../transfersToBack/TransferToBack";
+import React from 'react';
 
 const Service = () => {
 
 
     return (
         <div style={{display: 'flex', justifyContent: 'center'}}>
-            <TransferToBack/>
         </div>
     );
 };

@@ -34,24 +34,55 @@ const Navbar = () => {
               >
                 {t("Products")}
               </span>
-              <div className="dropdown">
+
+              <div className="dropdown_products">
                 <div
                   onClick={() => navigate("/products/1p")}
                   className="dropdown_element"
                 >
-                  <span>1 {t("Products")}</span>
+                  <span>Aluminium Profiles</span>
                 </div>
+
                 <div
                   onClick={() => navigate("/products/2p")}
                   className="dropdown_element"
                 >
-                  <span>2 {t("Products")}</span>
+                  <span>Metal-Plastic UPVC</span>
                 </div>
+
                 <div
                   onClick={() => navigate("/products/3p")}
                   className="dropdown_element"
                 >
-                  <span>3 {t("Products")}</span>
+                  <span>Glass Constructions</span>
+                </div>
+
+                <div
+                  onClick={() => navigate("/products/3p")}
+                  className="dropdown_element"
+                >
+                  <span>Remote Controlled Blinds</span>
+                </div>
+
+                <div
+                  onClick={() => navigate("/products/3p")}
+                  className="dropdown_element"
+                >
+                  <span>Automatic Sliding Door</span>
+                </div>
+
+                <div
+                  onClick={() => navigate("/products/3p")}
+                  className="dropdown_element"
+                >
+                  <span>Shower Enclosures</span>
+                </div>
+
+                <div
+                  onClick={() => navigate("/products/3p")}
+                  className="dropdown_element"
+                >
+                  <span>Facade Constructions</span>
                 </div>
               </div>
             </div>
@@ -62,35 +93,72 @@ const Navbar = () => {
               >
                 {t("Service")}
               </span>
+
+
               <div className="dropdown">
+
                 <div
                   onClick={() => navigate("/service/1s")}
                   className="dropdown_element"
                 >
-                  <span>1 {t("Service")}</span>
+                  <span> Free Measurement </span>
                 </div>
+
                 <div
                   onClick={() => navigate("/service/2s")}
                   className="dropdown_element"
                 >
-                  <span>2 {t("Service")}</span>
+                  <span> Free Consultation </span>
                 </div>
+
                 <div
                   onClick={() => navigate("/service/3s")}
                   className="dropdown_element"
                 >
-                  <span>3 {t("Service")}</span>
+                  <span> Free Installation</span>
                 </div>
+
+                <div
+                    onClick={() => navigate("/service/3s")}
+                    className="dropdown_element"
+                >
+                  <span> 1 Year Warranty Service</span>
+                </div>
+
+
+
               </div>
             </div>
-            <div className="home_btn">
+
+            <div className='dropdown_component'>
+
               <span
-                className="dropdown_span"
-                onClick={() => navigate("/about-us")}
+                  className="dropdown_span"
+                  onClick={() => navigate("/about-us")}
               >
                 {t("About Us")}
               </span>
+
+
+              <div className='dropdown_about'>
+                <div
+                    onClick={() => navigate("/service/3s")}
+                    className="dropdown_element"
+                >
+                  <span> Portfolio </span>
+                </div>
+                <div
+                    onClick={() => navigate("/service/3s")}
+                    className="dropdown_element"
+                >
+                  <span> Our History</span>
+                </div>
+              </div>
             </div>
+
+
+
+
           </div>
           <Menu />
         </div>
