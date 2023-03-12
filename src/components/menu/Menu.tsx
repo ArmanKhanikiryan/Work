@@ -49,22 +49,22 @@ const Menu = () => {
                 <div className='logo_menu_div'>
                 <img className='logo_menu' onClick={() => navigate('/')} src={logo} alt="logo"/>
                 </div>
-                <div className='icons_wrapper_menu'>
+                <div className='icons_wrapper_menu' onClick={() => navigate('/products', {state: 'door-pvc'})}>
                     <img className='header_icons_menu' src={door} alt="door"/>
                     <span> {t("Doors")} </span>
                 </div>
 
-                <div className='icons_wrapper_menu'>
+                <div className='icons_wrapper_menu' onClick={() => navigate('/products', {state: 'window-pvc'})}>
                     <img className='header_icons_menu' src={window} alt="window"/>
                     <span> {t("Windows")} </span>
                 </div>
 
-                <div className='icons_wrapper_menu'>
+                <div className='icons_wrapper_menu' onClick={() => navigate('/products', {state: 'handrails'})}>
                     <img className='header_icons_menu' src={handrail} alt="window"/>
                     <span>{t("Handrails")}</span>
                 </div>
 
-                <div className='icons_wrapper_menu'>
+                <div className='icons_wrapper_menu' onClick={() => navigate('/products', {state: 'slide'})}>
                     <img className='header_icons_menu' src={slide} alt="slide"/>
                     <span>{t("Slide")}</span>
                 </div>

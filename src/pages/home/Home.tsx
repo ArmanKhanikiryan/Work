@@ -4,6 +4,7 @@ import door from "assets/icons/door.png";
 import window from "assets/icons/window.png";
 import handrail from "assets/icons/handrail.png";
 import slide from "assets/icons/sliding-door.png";
+import termo from 'assets/icons/termo.png';
 import { useTranslation } from "react-i18next";
 import {useAppDispatch, useAppSelector} from "../../features/store";
 import {getMainImages} from "../../features/mainSlider/mainSliderSlice";
@@ -43,6 +44,11 @@ const Home = () => {
                 <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'slide'})}>
                   <img className="header_icons" src={slide} alt="slide" />
                   <span> {t("Slide")}</span>
+                </div>
+
+                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'termo'})}>
+                  <img className="header_icons" src={termo} alt="slide" />
+                  <span> {t("Termo")}</span>
                 </div>
               </div>
             </div>

@@ -60,14 +60,17 @@ const MenuAccordion = () => {
                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                     <Typography>{t("Products")}</Typography>
                 </AccordionSummary>
-                <AccordionDetails onClick={() => navigate('/mainSlider/1p')} className='accordion_inner_element'>
-                    <span>1 {t("Products")}</span>
+                <AccordionDetails onClick={() => navigate('/products', {state: 'doors'})} className='accordion_inner_element'>
+                    <span>{t("Doors")}</span>
                 </AccordionDetails>
-                <AccordionDetails onClick={() => navigate('/mainSlider/2p')} className='accordion_inner_element'>
-                    <span>2 {t("Products")}</span>
+                <AccordionDetails onClick={() => navigate('/products', {state: 'windows'})} className='accordion_inner_element'>
+                    <span>{t("Windows")}</span>
                 </AccordionDetails>
-                <AccordionDetails onClick={() => navigate('/mainSlider/3p')} className='accordion_inner_element'>
-                    <span>3 {t("Products")}</span>
+                <AccordionDetails onClick={() => navigate('/products', {state: 'slide'})} className='accordion_inner_element'>
+                    <span>{t("Slides")}</span>
+                </AccordionDetails>
+                <AccordionDetails onClick={() => navigate('/products', {state: 'termo'})} className='accordion_inner_element'>
+                    <span>{t("Termo")}</span>
                 </AccordionDetails>
             </Accordion>
 
@@ -76,16 +79,30 @@ const MenuAccordion = () => {
                     <Typography>{t("Service")}</Typography>
                 </AccordionSummary>
                 <AccordionDetails onClick={() => navigate('/service/1s')} className='accordion_inner_element'>
-                    <span>1 {t("Service")}</span>
+                    <span>{t("Free Measurement")}</span>
                 </AccordionDetails>
                 <AccordionDetails onClick={() => navigate('/service/2s')} className='accordion_inner_element'>
-                    <span>2 {t("Service")}</span>
+                    <span>{t("Free Consultation")}</span>
                 </AccordionDetails>
                 <AccordionDetails onClick={() => navigate('/service/3s')} className='accordion_inner_element'>
-                    <span>3 {t("Service")}</span>
+                    <span>{t("Free Installation")}</span>
+                </AccordionDetails>
+                <AccordionDetails onClick={() => navigate('/service/3s')} className='accordion_inner_element'>
+                    <span>{t("One Year Warranty Service")}</span>
                 </AccordionDetails>
             </Accordion>
-            <Typography onClick={() => navigate('/about-us')} style={{fontSize: '16px'}} className='about_us_button_menu' variant="h6">{t('About Us')}</Typography>
+
+            <Accordion className='accordion_element' expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+                    <Typography>{t('About Us')}</Typography>
+                </AccordionSummary>
+                <AccordionDetails onClick={() => navigate('/about-us')} className='accordion_inner_element'>
+                    <span>{t("Our Works")}</span>
+                </AccordionDetails>
+                <AccordionDetails onClick={() => navigate('/about-us')} className='accordion_inner_element'>
+                    <span>{t("Our Company")}</span>
+                </AccordionDetails>
+            </Accordion>
         </div>
     );
 }

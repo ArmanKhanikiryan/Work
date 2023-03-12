@@ -68,13 +68,13 @@ const navigationParamToPanelMap:NavigationParamToPanelMap = {
     blinds: false,
     automatic: false,
     facade: false,
+    termo: 'panel5'
 };
 
 const ProductsAccordion:FC<TProductsAccordionProps> = ({navigationParameter}) => {
     let initialState = navigationParameter ? navigationParamToPanelMap[navigationParameter] ?? false : false;
     const [expanded, setExpanded] = React.useState<string | boolean>(initialState);
     useEffect(() => {
-
         if (navigationParameter === 'aluminium') setExpanded('panel1')
         else if (navigationParameter === 'facade') toggleClicked(14)
         else if (navigationParameter === 'blinds') toggleClicked(13)
@@ -84,6 +84,15 @@ const ProductsAccordion:FC<TProductsAccordionProps> = ({navigationParameter}) =>
         else if (navigationParameter === 'glass') setExpanded('panel3')
         else if (navigationParameter === 'metal-plastic') setExpanded('panel2')
         else if (navigationParameter === 'handrails') setExpanded('panel4')
+        else if (navigationParameter === 'termo') setExpanded('panel1')
+        else if (navigationParameter === 'door-pvc') {
+            setExpanded('panel2')
+            toggleClicked(6)
+        }
+        else if (navigationParameter === 'window-pvc') {
+            setExpanded('panel2')
+            toggleClicked(7)
+        }
         else if (navigationParameter === 'slide') {
             setExpanded('panel1')
             toggleClicked(2)
@@ -136,14 +145,10 @@ const ProductsAccordion:FC<TProductsAccordionProps> = ({navigationParameter}) =>
     const {t} = useTranslation()
 
 
-
-    console.log(navigationParameter)
-
     return (
         <div className='product_accordion_wrapper'>
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-
-                <AccordionSummary aria-controls="panel1d-content" onClick={resetClicked} id="panel1d-header">
+                <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
                     <Typography>{t("Aluminium Profiles")}</Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{paddingLeft: '50px'}} onClick={() => toggleClicked(0)} className={clicked[0].elem ? "product_accordion_inner_element_clicked" : "product_accordion_inner_element"}>
@@ -156,7 +161,7 @@ const ProductsAccordion:FC<TProductsAccordionProps> = ({navigationParameter}) =>
                     <Typography> {t("Slides")}</Typography>
                 </AccordionDetails>
                 <Accordion sx={{border: 'none'}}>
-                <AccordionSummary sx={{paddingLeft: '50px', background: 'none', borderTop: '1px solid lightgrey'}} onClick={resetClicked} aria-controls="panel1-1d-content"  id="panel1-1d-header">
+                <AccordionSummary sx={{paddingLeft: '50px', background: 'none', borderTop: '1px solid lightgrey'}}>
                     <Typography> {t('Termo Aluminium Profile')}</Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{paddingLeft: '85px'}} onClick={() => toggleClicked(3)} className={clicked[3].elem ? "product_accordion_inner_element_clicked" : "product_accordion_inner_element"}>
@@ -178,18 +183,18 @@ const ProductsAccordion:FC<TProductsAccordionProps> = ({navigationParameter}) =>
 
             <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                 <AccordionSummary onClick={resetClicked} aria-controls="panel2d-content" id="panel2d-header">
-                    <Typography>{t("Metal-Plastic UPVC")}</Typography>
+                    <Typography>{t("Metal-Plastic")}</Typography>
                 </AccordionSummary>
 
                 <AccordionDetails sx={{paddingLeft: '50px'}} onClick={() => toggleClicked(6)} className={clicked[6].elem ? "product_accordion_inner_element_clicked" : "product_accordion_inner_element"}>
                     <Typography>
-                        {t("Doors")}
+                        {t("Doors")} UPVC
                     </Typography>
                 </AccordionDetails>
 
                 <AccordionDetails sx={{paddingLeft: '50px'}} onClick={() => toggleClicked(7)} className={clicked[7].elem ? "product_accordion_inner_element_clicked" : "product_accordion_inner_element"}>
                     <Typography>
-                        {t("Windows")}
+                        {t("Windows")} UPVC
                     </Typography>
                 </AccordionDetails>
 
