@@ -14,10 +14,8 @@ const Products = () => {
     return (
         <div className='products_page_wrapper'>
 
-            <h2>Product List</h2>
-            <div className='products_list'>
                 <ProductsAccordion navigationParameter={location.state}/>
-            </div>
+
 
         </div>
     );
