@@ -11,7 +11,7 @@
   "Contact Info": "Контактная Информация",
   "Menu": "Меню",
   "Our Company": "Наша Компания",
-  "Portfolio": "Портфолио",
+  "Our Works": "Наши Работы",
   "One Year Warranty Service": "Один Год Гарантийного Обслуживания",
   "Free Installation": "Бесплатная Установка",
   "Free Consultation": "Бесплатная Консультация",
@@ -25,8 +25,11 @@
   "Aluminium Profiles": "Алюминиевые Профили",
   "Inter-room Glass Partitions": "Межкомнатные Стеклянные Перегородки",
   "Glass Handrail": "Стеклянный поручень",
-  "Cold Aluminium Slides": "Холодные Алюминиевые Слайды",
-  "Termo Aluminium": "Термо Алюминий",
+  "Slides": "Слайды",
+  "Termo Windows": "Термо Окна",
+  "Termo Doors": "Термо Двери",
   "Termo Slides": "Термо Слайды",
-  "Termo Profile": "Термо Профиль"
+  "Termo Aluminium Profile": "Термо Алюминиевый Профиль",
+  "Handrails": "Поручни",
+  "Aluminium Handrail": "Алюминиевый Поручень"
 }

@@ -73,7 +73,14 @@ const Navbar = () => {
                 </div>
 
                 <div
-                  onClick={() => navigate("/products", {state: "glass"})}
+                    onClick={() => navigate("/products", {state: "handrails"})}
+                    className="dropdown_element"
+                >
+                  <span>{t("Handrails")}</span>
+                </div>
+
+                <div
+                  onClick={() => navigate("/products", {state: "glass-shower"})}
                   className="dropdown_element"
                 >
                   <span>{t("Shower Enclosures")}</span>
@@ -147,7 +154,7 @@ const Navbar = () => {
                     onClick={() => navigate("/about-us/portfolio")}
                     className="dropdown_element"
                 >
-                  <span> {t("Portfolio")} </span>
+                  <span> {t("Our Works")} </span>
                 </div>
                 <div
                     onClick={() => navigate("/about-us/our-company")}

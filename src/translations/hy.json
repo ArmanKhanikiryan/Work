@@ -11,7 +11,7 @@
   "Contact Info": "Կոնտակտային Տվյալները",
   "Menu": "Մենյու",
   "Our Company": "Մեր Ընկերությունը",
-  "Portfolio": "Պորտֆոլիո",
+  "Our Works": "Մեր Աշխատանքները",
   "One Year Warranty Service":"Մեկ Տարվա Երաշխիքային Սպասարկում",
   "Free Installation": "Անվճար Տեղադրում",
   "Free Consultation": "Անվճար Խորհրդատվություն",
@@ -25,9 +25,11 @@
   "Aluminium Profiles": "Ալյումինե Պրոֆիլներ",
   "Inter-room Glass Partitions": "Միջսենյակային Ապակե Միջնապատեր",
   "Glass Handrail": "Ապակե Բազրիք",
-  "Cold Aluminium Slides": "Սառը Ալյումինե Սլայդներ",
-  "Termo Aluminium": "Տերմո Ալյումին",
+  "Slides": "Սլայդներ",
+  "Termo Windows": "Տերմո Պատուհաններ",
+  "Termo Doors": "Տերմո Դռներ",
   "Termo Slides": "Տերմո Սլայդներ",
-  "Termo Profile": "Տերմո Պրոֆիլ"
-
+  "Termo Aluminium Profile": "Տերմո Ալյումինե Պրոֆիլ",
+  "Handrails": "Բազրիքներ",
+  "Aluminium Handrail": "Ալյումինե Բազրիք"
 }

@@ -2,8 +2,21 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     padding-top: 50px;
+}
+
+.products_list{
+    display: flex;
+    height: 60%;
+}
+
+.product_items_list{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 80%;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
 }
 

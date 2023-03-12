@@ -7,7 +7,7 @@ import '../navbar/Navbar.css';
 import './Menu.css';
 import door from "../../assets/icons/door.png";
 import window from "../../assets/icons/window.png";
-import balcony from "../../assets/icons/balcony.png";
+import handrail from "../../assets/icons/handrail.png";
 import slide from "../../assets/icons/sliding-door.png";
 import logo from "../../assets/images/logo.png";
 import {useNavigate} from "react-router";
@@ -43,7 +43,6 @@ const Menu = () => {
         <Box
             sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 275 }}
             role="presentation"
-            // onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
@@ -61,8 +60,8 @@ const Menu = () => {
                 </div>
 
                 <div className='icons_wrapper_menu'>
-                    <img className='header_icons_menu' src={balcony} alt="window"/>
-                    <span>{t("Balcony")}</span>
+                    <img className='header_icons_menu' src={handrail} alt="window"/>
+                    <span>{t("Handrails")}</span>
                 </div>
 
                 <div className='icons_wrapper_menu'>

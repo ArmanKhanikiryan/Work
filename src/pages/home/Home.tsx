@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import "./Home.css";
 import door from "assets/icons/door.png";
 import window from "assets/icons/window.png";
-import balcony from "assets/icons/balcony.png";
+import handrail from "assets/icons/handrail.png";
 import slide from "assets/icons/sliding-door.png";
 import { useTranslation } from "react-i18next";
 import {useAppDispatch, useAppSelector} from "../../features/store";
 import {getMainImages} from "../../features/mainSlider/mainSliderSlice";
 import NewSlider from "../../components/newSlider";
+import {useNavigate} from "react-router";
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(getMainImages())
   }, [])
+  const navigate = useNavigate()
 
   return (
     <>
@@ -24,21 +26,21 @@ const Home = () => {
           <div className="home_header_wrapper">
             <div className="home_header">
               <div className="header_image_div">
-                <div className="icons_wrapper">
+                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'doors'})}>
                   <img className="header_icons" src={door} alt="door" />
                   <span> {t("Doors")} </span>
                 </div>
 
-                <div className="icons_wrapper">
+                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'windows'})}>
                   <img className="header_icons" src={window} alt="window" />
                   <span> {t("Windows")} </span>
                 </div>
 
-                <div className="icons_wrapper">
-                  <img className="header_icons" src={balcony} alt="window" />
-                  <span> {t("Balcony")}</span>
+                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'handrails'})}>
+                  <img className="header_icons" src={handrail} alt="window" />
+                  <span> {t("Handrails")}</span>
                 </div>
-                <div className="icons_wrapper">
+                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'slide'})}>
                   <img className="header_icons" src={slide} alt="slide" />
                   <span> {t("Slide")}</span>
                 </div>
