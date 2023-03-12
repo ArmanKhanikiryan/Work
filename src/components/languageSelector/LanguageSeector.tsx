@@ -54,7 +54,7 @@ const LanguageSelector = () => {
     const { t, i18n } = useTranslation()
 
     return (
-        <form style={{margin: ' 10px 5px 0 10px' }} autoComplete="off">
+        <form style={{margin: ' 10px 15px 0 10px' }} autoComplete="off">
             <FormControl >
                 <InputLabel htmlFor="open-select" />
                 <Select

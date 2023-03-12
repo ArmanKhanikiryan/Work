@@ -1,0 +1,19 @@
+.product_accordion_wrapper{
+    max-width: 15%;
+    min-width: 200px;
+}
+
+
+
+.product_accordion_inner_element{
+    padding: 0;
+    cursor: pointer;
+    background-color: white;
+    background-image: linear-gradient(to right, white 50%, rgba(188,207,215, 0.6) 50%);
+    background-size: 200% 100%;
+    transition: background-position 0.5s ease;
+}
+.product_accordion_inner_element:hover{
+    background-position: -100% 0;
+    opacity: 0.6;
+}

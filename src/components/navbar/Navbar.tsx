@@ -3,7 +3,6 @@ import "./Navbar.css";
 import logo from "../../assets/images/logo.png";
 import { useNavigate } from "react-router";
 import LanguageSelector from "../languageSelector";
-import DialogComponent from "../dialog";
 import Menu from "../menu";
 import NavbarAccordion from "./navbarAccordion";
 import { useTranslation } from "react-i18next";
@@ -11,6 +10,8 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+
+
   return (
     <div className="navbar_wrapper">
       <div className="navbar">
@@ -37,52 +38,52 @@ const Navbar = () => {
 
               <div className="dropdown_products">
                 <div
-                  onClick={() => navigate("/products/1p")}
+                    onClick={() => navigate("/products", {state: 'aluminium'})}
                   className="dropdown_element"
                 >
-                  <span>Aluminium Profiles</span>
+                  <span>{t("Aluminium Profiles")}</span>
                 </div>
 
                 <div
-                  onClick={() => navigate("/products/2p")}
+                    onClick={() => navigate("/products", {state:'metal-plastic'})}
                   className="dropdown_element"
                 >
-                  <span>Metal-Plastic UPVC</span>
+                  <span>{t("Metal-Plastic UPVC")}</span>
                 </div>
 
                 <div
-                  onClick={() => navigate("/products/3p")}
+                  onClick={() => navigate("/products", {state: 'glass'})}
                   className="dropdown_element"
                 >
-                  <span>Glass Constructions</span>
+                  <span>{t('Glass Constructions')}</span>
                 </div>
 
                 <div
-                  onClick={() => navigate("/products/3p")}
+                  onClick={() => navigate("/products/remote-blinds")}
                   className="dropdown_element"
                 >
-                  <span>Remote Controlled Blinds</span>
+                  <span>{t("Remote Controlled Blinds")}</span>
                 </div>
 
                 <div
-                  onClick={() => navigate("/products/3p")}
+                  onClick={() => navigate("/products/auto-slide")}
                   className="dropdown_element"
                 >
-                  <span>Automatic Sliding Door</span>
+                  <span>{t("Automatic Sliding Door")}</span>
                 </div>
 
                 <div
-                  onClick={() => navigate("/products/3p")}
+                  onClick={() => navigate("/products/shower-enclosures")}
                   className="dropdown_element"
                 >
-                  <span>Shower Enclosures</span>
+                  <span>{t("Shower Enclosures")}</span>
                 </div>
 
                 <div
-                  onClick={() => navigate("/products/3p")}
+                  onClick={() => navigate("/products/facade")}
                   className="dropdown_element"
                 >
-                  <span>Facade Constructions</span>
+                  <span>{t("Facade Constructions")}</span>
                 </div>
               </div>
             </div>
@@ -98,31 +99,31 @@ const Navbar = () => {
               <div className="dropdown">
 
                 <div
-                  onClick={() => navigate("/service/1s")}
+                  onClick={() => navigate("/service/measurement")}
                   className="dropdown_element"
                 >
-                  <span> Free Measurement </span>
+                  <span> {t('Free Measurement')} </span>
                 </div>
 
                 <div
-                  onClick={() => navigate("/service/2s")}
+                  onClick={() => navigate("/service/consultation")}
                   className="dropdown_element"
                 >
-                  <span> Free Consultation </span>
+                  <span> {t("Free Consultation")} </span>
                 </div>
 
                 <div
-                  onClick={() => navigate("/service/3s")}
+                  onClick={() => navigate("/service/installation")}
                   className="dropdown_element"
                 >
-                  <span> Free Installation</span>
+                  <span>{t("Free Installation")} </span>
                 </div>
 
                 <div
-                    onClick={() => navigate("/service/3s")}
+                    onClick={() => navigate("/service/warranty")}
                     className="dropdown_element"
                 >
-                  <span> 1 Year Warranty Service</span>
+                  <span> {t("One Year Warranty Service")}</span>
                 </div>
 
 
@@ -142,16 +143,16 @@ const Navbar = () => {
 
               <div className='dropdown_about'>
                 <div
-                    onClick={() => navigate("/service/3s")}
+                    onClick={() => navigate("/about-us/portfolio")}
                     className="dropdown_element"
                 >
-                  <span> Portfolio </span>
+                  <span> {t("Portfolio")} </span>
                 </div>
                 <div
-                    onClick={() => navigate("/service/3s")}
+                    onClick={() => navigate("/about-us/our-company")}
                     className="dropdown_element"
                 >
-                  <span> Our History</span>
+                  <span> {t('Our Company')}</span>
                 </div>
               </div>
             </div>
@@ -169,7 +170,6 @@ const Navbar = () => {
           <div className="contact">
             <div className="contact_container">
               <NavbarAccordion />
-              <DialogComponent />
             </div>
             <LanguageSelector />
           </div>

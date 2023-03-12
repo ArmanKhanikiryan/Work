@@ -1,19 +1,25 @@
-import React, {} from 'react';
-import './Products'
-import NewSlider from "../../components/newSlider";
+import React from 'react';
+import ProductsAccordion from "./productsAccordion";
+import './Products.css'
+import {useLocation} from "react-router";
+
+
 
 
 const Products = () => {
 
+    const location = useLocation()
 
+    console.log(location.state)
     return (
+        <div className='products_page_wrapper'>
 
-        <div style={{display: "flex", alignItems: "center", justifyContent: 'center', height: '100vh'}}>
-
-            {/*<NewSlider/>*/}
+            <h2>Product List</h2>
+            <div className='products_list'>
+                <ProductsAccordion navigationParameter={location.state}/>
+            </div>
 
         </div>
-
     );
 };
 

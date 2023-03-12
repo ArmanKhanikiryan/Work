@@ -13,6 +13,7 @@ export enum RoutesEnum {
   HOME = "/",
   Products = "/products",
   Service = "/service",
+
 }
 
 export type RouteType = {
@@ -34,6 +35,8 @@ const RouteData: RouteType[] = [
     Component: Service,
   },
 ];
+
+
 
 const App = () => {
   return (
