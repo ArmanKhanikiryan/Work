@@ -9,7 +9,7 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import {useTranslation} from "react-i18next";
 import './ProductsAccordion.css'
-import {FC, useEffect, useState} from "react";
+import {FC, memo, useEffect, useState} from "react";
 
 const Accordion = styled((props: AccordionProps) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -72,19 +72,22 @@ const navigationParamToPanelMap:NavigationParamToPanelMap = {
 };
 
 const ProductsAccordion:FC<TProductsAccordionProps> = ({navigationParameter}) => {
+
+
+
     let initialState = navigationParameter ? navigationParamToPanelMap[navigationParameter] ?? false : false;
     const [expanded, setExpanded] = React.useState<string | boolean>(initialState);
     useEffect(() => {
         if (navigationParameter === 'aluminium') setExpanded('panel1')
+        else if (navigationParameter === 'termo') setExpanded('panel1')
+        else if (navigationParameter === 'metal-plastic') setExpanded('panel2')
+        else if (navigationParameter === 'glass') setExpanded('panel3')
+        else if (navigationParameter === 'handrails') setExpanded('panel4')
         else if (navigationParameter === 'facade') toggleClicked(14)
         else if (navigationParameter === 'blinds') toggleClicked(13)
         else if (navigationParameter === 'automatic') toggleClicked(12)
         else if (navigationParameter === 'glass-shower') toggleClicked(8)
         else if (navigationParameter === 'glass-shower') toggleClicked(8)
-        else if (navigationParameter === 'glass') setExpanded('panel3')
-        else if (navigationParameter === 'metal-plastic') setExpanded('panel2')
-        else if (navigationParameter === 'handrails') setExpanded('panel4')
-        else if (navigationParameter === 'termo') setExpanded('panel1')
         else if (navigationParameter === 'door-pvc') {
             setExpanded('panel2')
             toggleClicked(6)
@@ -180,7 +183,6 @@ const ProductsAccordion:FC<TProductsAccordionProps> = ({navigationParameter}) =>
 
 
 
-
             <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                 <AccordionSummary onClick={resetClicked} aria-controls="panel2d-content" id="panel2d-header">
                     <Typography>{t("Metal-Plastic")}</Typography>
@@ -262,5 +264,5 @@ const ProductsAccordion:FC<TProductsAccordionProps> = ({navigationParameter}) =>
     );
 }
 
-export default ProductsAccordion;
+export default memo(ProductsAccordion);
 

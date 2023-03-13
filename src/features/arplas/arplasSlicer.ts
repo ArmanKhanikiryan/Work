@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 
-export const getImagesArplas = createAsyncThunk('fetch/mainSliderSlice', async (arg, thunkAPI) => {
+export const getImagesArplas = createAsyncThunk('fetch/arplasImages', async (arg, thunkAPI) => {
     try {
         const response = await fetch('http://localhost:3333/images-arplas');
         return await response.json();

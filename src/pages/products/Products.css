@@ -16,7 +16,18 @@
     flex-wrap: wrap;
     height: 100%;
     width: 80%;
-    border: 1px solid lightgrey;
     border-radius: 3px;
 }
 
+.product_card{
+    max-width: 30vw;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    padding: 8px;
+}
+
+.product_card_span{
+    text-align: center;
+    margin-top: 15px;
+}

@@ -17,7 +17,7 @@ const Home = () => {
   const mainSlider = useAppSelector(state => state.mainSlider)
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(getMainImages())
+      dispatch(getMainImages())
   }, [])
   const navigate = useNavigate()
 
@@ -27,12 +27,12 @@ const Home = () => {
           <div className="home_header_wrapper">
             <div className="home_header">
               <div className="header_image_div">
-                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'doors'})}>
+                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'door-pvc'})}>
                   <img className="header_icons" src={door} alt="door" />
                   <span> {t("Doors")} </span>
                 </div>
 
-                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'windows'})}>
+                <div className="icons_wrapper" onClick={() => navigate('/products', {state: 'window-pvc'})}>
                   <img className="header_icons" src={window} alt="window" />
                   <span> {t("Windows")} </span>
                 </div>
