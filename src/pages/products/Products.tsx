@@ -17,6 +17,7 @@ const Products = () => {
             dispatch(getImagesArplas())
     },[])
 
+    console.log(arplasState);
 
 
     return (
@@ -29,15 +30,17 @@ const Products = () => {
 
                 <div className='product_items_list'>
 
-                    <div className='product_card'>
-                        <img src={arplasState.length ? arplasState[0].url : ''} alt=""/>
-                        <span className='product_card_span'>{arplasState.length ? arplasState[0].name : 'empty'}</span>
-                    </div>
-                    {/*{arplasState.length ? arplasState.map((elem, index) => {*/}
-                    {/*    return <div key={index} className='product_card'>*/}
-                    {/*        <img src={elem.url} width="300px" alt=""/>*/}
-                    {/*    </div>*/}
-                    {/*}) : null}*/}
+                    {/*<div className='product_card'>*/}
+                    {/*    <img src={arplasState.length ? arplasState[0].url : ''} alt=""/>*/}
+                    {/*    <span className='product_card_span'>{arplasState.length ? arplasState[0].name : 'empty'}</span>*/}
+                    {/*</div>*/}
+                    {arplasState.length ? arplasState.map((elem, index) => {
+                        return <div key={index} className='product_card'>
+                            <img src={elem.url} width="300px" alt=""/>
+                            <span className='product_card_span'>{elem.name}</span>
+
+                        </div>
+                    }) : null}
                 </div>
 
 
